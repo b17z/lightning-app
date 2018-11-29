@@ -14,6 +14,6 @@
 	<key>STANDALONE_CONTEXT_TYPE</key>
 	<string>user</string>
 	<key>developmentUrl</key>
-	<string>expcce5b8de9dc3494199f753d071f82699://192.168.14.254:19000</string>
+	<string>lightning://192.168.0.38:19000</string>
 </dict>
 </plist>
