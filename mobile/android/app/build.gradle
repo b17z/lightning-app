@@ -20,7 +20,7 @@ android {
   buildToolsVersion '27.0.3'
 
   defaultConfig {
-    applicationId 'engineering.lightning.Lightning'
+    applicationId 'engineering.lightning.LightningApp'
     targetSdkVersion 26
     versionCode 1
     versionName '0.0.1-alpha'

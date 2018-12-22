@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>engineering.lightning.Lightning</string>
+	<string>engineering.lightning.LightningApp</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.0.1-alpha</string>
+	<string>0.0.1</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -31,7 +31,7 @@
 			<string>OAuthRedirect</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>engineering.lightning.Lightning</string>
+				<string>engineering.lightning.LightningApp</string>
 			</array>
 		</dict>
 	</array>
