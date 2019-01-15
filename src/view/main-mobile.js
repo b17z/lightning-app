@@ -10,6 +10,7 @@ import WelcomeView from './welcome';
 import LoaderView from './loader';
 import SelectSeedView from './select-seed';
 import SeedIntroView from './seed-intro-mobile';
+import SeedView from './seed-mobile';
 import SetPinView from './set-pin-mobile';
 import SetPinConfirmView from './set-pin-confirm-mobile';
 import SeedSuccessView from './seed-success-mobile';
@@ -59,9 +60,9 @@ const Welcome = () => <WelcomeView />;
 
 const Loader = () => <LoaderView />;
 
-const SelectSeed = () => (
-  <SelectSeedView store={store} wallet={wallet} nav={nav} />
-);
+const SelectSeed = () => <SelectSeedView store={store} wallet={wallet} />;
+
+const Seed = () => <SeedView store={store} wallet={wallet} />;
 
 const SeedIntro = () => <SeedIntroView nav={nav} />;
 
@@ -161,12 +162,17 @@ const TransactionDetail = () => (
   <TransactionDetailView store={store} nav={nav} />
 );
 
+const stackOptions = {
+  headerMode: 'none',
+};
+
 const MainStack = createStackNavigator(
   {
     Welcome,
     Loader,
     SelectSeed,
     SeedIntro,
+    Seed,
     SetPassword,
     SetPasswordConfirm,
     SeedSuccess,
@@ -175,19 +181,12 @@ const MainStack = createStackNavigator(
     LoaderSyncing,
     Wait,
     Home,
-    Channels,
-    ChannelDetail,
-    ChannelDelete,
-    ChannelCreate,
     Settings,
     SettingsUnit,
     SettingsFiat,
-    Notifications,
     CLI,
   },
-  {
-    headerMode: 'none',
-  }
+  stackOptions
 );
 
 const InvoiceStack = createStackNavigator(
@@ -195,9 +194,7 @@ const InvoiceStack = createStackNavigator(
     Invoice,
     InvoiceQR,
   },
-  {
-    headerMode: 'none',
-  }
+  stackOptions
 );
 
 const PayStack = createStackNavigator(
@@ -210,9 +207,7 @@ const PayStack = createStackNavigator(
     PayBitcoinConfirm,
     PayBitcoinDone,
   },
-  {
-    headerMode: 'none',
-  }
+  stackOptions
 );
 
 const TransactionStack = createStackNavigator(
@@ -220,9 +215,24 @@ const TransactionStack = createStackNavigator(
     Transactions,
     TransactionDetail,
   },
+  stackOptions
+);
+
+const ChannelStack = createStackNavigator(
   {
-    headerMode: 'none',
-  }
+    Channels,
+    ChannelDetail,
+    ChannelDelete,
+    ChannelCreate,
+  },
+  stackOptions
+);
+
+const NotificationStack = createStackNavigator(
+  {
+    Notifications,
+  },
+  stackOptions
 );
 
 const RootStack = createStackNavigator(
@@ -231,11 +241,13 @@ const RootStack = createStackNavigator(
     Invoice: InvoiceStack,
     Pay: PayStack,
     Transactions: TransactionStack,
+    Channels: ChannelStack,
+    Notifications: NotificationStack,
     Deposit,
   },
   {
+    ...stackOptions,
     mode: 'modal',
-    headerMode: 'none',
   }
 );
 
