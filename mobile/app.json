@@ -25,7 +25,7 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
+      "supportsTablet": false,
       "bundleIdentifier": "engineering.lightning.LightningApp",
       "publishBundlePath": "ios/lightning/Supporting/shell-app.bundle",
       "publishManifestPath": "ios/lightning/Supporting/shell-app-manifest.json"
